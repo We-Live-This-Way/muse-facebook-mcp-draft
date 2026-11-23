@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^3.25.0"
+  },
+  "description": "Draft-only Facebook Page MCP server (stdio, for a MausBot). Creates, edits, and deletes drafts, has one gated publish tool, and searches the Meta Ad Library. Built by Muse-proto.",
+  "engines": {
+    "node": ">=24"
+  },
+  "name": "muse-facebook-mcp-draft",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
