@@ -74,3 +74,9 @@ Example MausBot entry (`config.json` → `mcpServers`):
 ```
 
 No build step — plain ESM run directly by node.
+
+## appsecret_proof
+
+Every Graph API call carries `appsecret_proof` (HMAC-SHA256 of the access token, keyed with
+`FB_APP_SECRET`, hex), so the Meta app can keep **Require App Secret** turned on. The server
+refuses to start without `FB_APP_SECRET`, and never logs it.

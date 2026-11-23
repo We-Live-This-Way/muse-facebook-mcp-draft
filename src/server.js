@@ -5,11 +5,13 @@ import { dirname, join } from "node:path";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { loadEnvFiles, requireEnv } from "./env.js";
+import { setAppSecret } from "./graph.js";
 import { registerTools } from "./tools.js";
 
 const dir = dirname(fileURLToPath(import.meta.url));
 const env = loadEnvFiles([join(dir, "..", ".env")]);
-requireEnv(env, ["FB_PAGE_TOKEN", "FB_PAGE_ID", "FB_LONG_TOKEN"]);
+requireEnv(env, ["FB_PAGE_TOKEN", "FB_PAGE_ID", "FB_LONG_TOKEN", "FB_APP_SECRET"]);
+setAppSecret(env.FB_APP_SECRET);
 
 const server = new McpServer({
   name: "facebook-draft",
